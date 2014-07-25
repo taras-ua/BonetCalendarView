@@ -10,7 +10,7 @@
 
         <Button
             android:id="@+id/calendario_botao_prev"
-            style="@style/BackButton"
+            style="@style/BonetCalendarTheme.Buttons.Prev"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_alignParentLeft="true"
@@ -18,7 +18,7 @@
 
         <Button
             android:id="@+id/calendario_botao_next"
-            style="@style/NextButton"
+            style="@style/BonetCalendarTheme.Buttons.Next"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_alignParentRight="true"

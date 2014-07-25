@@ -13,17 +13,19 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="BonetCalendarTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="BackButton" parent="@android:style/Widget.Button">
+    <style name="BonetCalendarTheme.Buttons" />
+
+    <style name="BonetCalendarTheme.Buttons.Prev" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/button_previous_background</item>
         <item name="android:height">@dimen/button_size</item>
         <item name="android:width">@dimen/button_size</item>
     </style>
     
-    <style name="NextButton" parent="@android:style/Widget.Button">
+    <style name="BonetCalendarTheme.Buttons.Next" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/button_next_background</item>
         <item name="android:height">@dimen/button_size</item>
         <item name="android:width">@dimen/button_size</item>
