@@ -33,7 +33,8 @@
             android:layout_toRightOf="@id/calendario_botao_prev"
             android:clickable="true"
             android:gravity="center_vertical|center_horizontal"
-            android:textSize="18sp" />
+            style="@style/BonetCalendarTheme.Text.Headline" />
+
     </RelativeLayout>
 
     <ViewSwitcher
