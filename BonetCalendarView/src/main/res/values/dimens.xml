@@ -3,5 +3,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-	<dimen name="button_size">32sp</dimen>
+
+    <dimen name="bt_button_prev_height">32sp</dimen>
+    <dimen name="bt_button_prev_width">32sp</dimen>
+    <dimen name="bt_button_next_height">32sp</dimen>
+    <dimen name="bt_button_next_width">32sp</dimen>
 </resources>
