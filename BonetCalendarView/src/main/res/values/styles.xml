@@ -23,12 +23,14 @@
         <item name="android:background">@drawable/button_previous_background</item>
         <item name="android:height">@dimen/bt_button_prev_height</item>
         <item name="android:width">@dimen/bt_button_prev_width</item>
+        <item name="android:layout_marginBottom">@dimen/bt_button_prev_margin_bottom</item>
     </style>
     
     <style name="BonetCalendarTheme.Buttons.Next" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/button_next_background</item>
         <item name="android:height">@dimen/bt_button_next_height</item>
         <item name="android:width">@dimen/bt_button_next_width</item>
+        <item name="android:layout_marginBottom">@dimen/bt_button_next_margin_bottom</item>
     </style>
 
     <style name="BonetCalendarTheme.Text" parent="@android:style/TextAppearance" />
