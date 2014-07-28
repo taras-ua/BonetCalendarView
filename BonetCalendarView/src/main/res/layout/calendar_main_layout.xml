@@ -9,26 +9,26 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/calendario_botao_prev"
+            android:id="@+id/calendar_button_prev"
             style="@style/BonetCalendarTheme.Buttons.Prev"
             android:layout_width="@dimen/bt_button_prev_width"
             android:layout_height="@dimen/bt_button_prev_height"
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/calendario_botao_next"
+            android:id="@+id/calendar_button_next"
             style="@style/BonetCalendarTheme.Buttons.Next"
             android:layout_width="@dimen/bt_button_next_width"
             android:layout_height="@dimen/bt_button_next_height"
             android:layout_alignParentRight="true" />
 
         <TextView
-            android:id="@+id/calendario_titulo"
+            android:id="@+id/calendar_headline"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_alignBottom="@id/calendario_botao_prev"
-            android:layout_toLeftOf="@+id/calendario_botao_next"
-            android:layout_toRightOf="@id/calendario_botao_prev"
+            android:layout_alignBottom="@id/calendar_button_prev"
+            android:layout_toLeftOf="@+id/calendar_button_next"
+            android:layout_toRightOf="@id/calendar_button_prev"
             android:clickable="true"
             android:gravity="center_vertical|center_horizontal"
             style="@style/BonetCalendarTheme.Text.Headline" />

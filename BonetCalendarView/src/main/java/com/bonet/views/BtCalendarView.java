@@ -102,7 +102,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 		mCalendar = new BtCalendar(currentMonth);
 
 		// Initializes view contents
-		mTituloTextView = (TextView)findViewById(R.id.calendario_titulo);
+		mTituloTextView = (TextView)findViewById(R.id.calendar_headline);
 		mContainer = (ViewSwitcher)findViewById(R.id.calendar_content_container);
 
 		// Adds the view obtained from the month provider to the container
@@ -139,9 +139,9 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 			}
 		};
 
-		mPrevButton = (Button) findViewById(R.id.calendario_botao_prev);
-		mNextButton = (Button) findViewById(R.id.calendario_botao_next);
-		mTituloTextView = (TextView) findViewById(R.id.calendario_titulo);
+		mPrevButton = (Button) findViewById(R.id.calendar_button_prev);
+		mNextButton = (Button) findViewById(R.id.calendar_button_next);
+		mTituloTextView = (TextView) findViewById(R.id.calendar_headline);
 
 		setMonth(currentMonth);
 		
