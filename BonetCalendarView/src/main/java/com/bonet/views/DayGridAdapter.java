@@ -83,43 +83,45 @@ public class DayGridAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		
-		// Transform the 1D position two 2D
-		int column = position % 7;
-		int row = position / 7;
-		int day;
-		
-		boolean isValid;
-		
-		TextView tv;
-		if(null == convertView) {
-			 convertView = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
-		}
-		
-		tv = (TextView)convertView.findViewById(R.id.bt_grid_cell_text);
-		
+        ViewHolder viewHolder = null;
+        View view = null;
+
+        if (convertView == null) {
+            view = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
+            viewHolder = new ViewHolder();
+            viewHolder.textView = (TextView) view.findViewById(R.id.bt_grid_cell_text);
+            view.setTag(viewHolder);
+        } else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
+
+        // Transform the 1D position two 2D
+        int column = position % 7;
+        int row = position / 7;
+
 		// Gets the date for the position
-		day = mMonthDisplay.getDayAt(row, column);
+		int day = mMonthDisplay.getDayAt(row, column);
 
 		// Sets the Text
-		tv.setText(day + "");
+        viewHolder.textView.setText(day + "");
 		
 		// Whether the current cell represents a valid date
-		isValid = (mMonthDisplay.isWithinCurrentMonth(row, column)) && mMonth.getDate(day).isWithinBounds(mMinDate, mMaxDate) ;
+        boolean isValid = (mMonthDisplay.isWithinCurrentMonth(row, column)) && mMonth.getDate(day).isWithinBounds(mMinDate, mMaxDate) ;
 		
 		// And disables the click
-		convertView.setEnabled(isValid);
+		view.setEnabled(isValid);
 
         BtDate btDate = new BtDate(mMonth.getYear(), mMonth.getMonth(), day);
         if(isValid && btDate.equals(BtDate.today())) {
-            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_Today);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_Today);
         } else if (isValid) {
-            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
         } else {
-            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
         }
 		
-		return convertView;
+		return view;
 	}
 	
 	/**
@@ -193,5 +195,8 @@ public class DayGridAdapter extends BaseAdapter {
 	public BtDate getMinDate(){
 		return mMinDate;
 	}
-	
+
+    static class ViewHolder {
+        public TextView textView;
+    }
 }
