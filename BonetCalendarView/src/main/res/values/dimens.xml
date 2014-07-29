@@ -19,4 +19,6 @@
     <dimen name="bt_grid_cell_text_textsize">18sp</dimen>
     <dimen name="bt_grid_month_daycontainer_margintop">10sp</dimen>
 
+    <dimen name="bt_generalseparator_height">3dp</dimen>
+
 </resources>
