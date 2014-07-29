@@ -38,5 +38,7 @@
     <style name="BonetCalendarTheme.Text.Headline" parent="@style/BonetCalendarTheme.Text">
         <item name="android:textSize">@dimen/bt_headline_textsize</item>
     </style>
-    
+
+    <style name="BonetCalendarTheme.Text.Today" parent="@style/BonetCalendarTheme.Text" />
+
 </resources>

@@ -120,6 +120,11 @@ public class DayGridAdapter extends BaseAdapter {
 		
 		// Sets the text color
 		tv.setTextColor(textColor);
+
+        BtDate btDate = new BtDate(mMonth.getYear(), mMonth.getMonth(), day);
+        if(isValid && btDate.equals(BtDate.today())) {
+            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_Today);
+        }
 		
 		return convertView;
 	}
