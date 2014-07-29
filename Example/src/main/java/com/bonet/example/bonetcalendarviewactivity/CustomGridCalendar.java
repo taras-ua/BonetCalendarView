@@ -16,11 +16,11 @@ public class CustomGridCalendar extends BtCalendarView{
 	CustomDayGridAdapter mDayAdapter;
 	
 	public CustomGridCalendar(Context context) {
-		this(context,null);
+		this(context, null);
 	}
 	
 	public CustomGridCalendar(Context context, AttributeSet attr){
-		super(context,attr);
+		super(context, attr);
 		
 		mSelectedDay = BtDate.today();
 		
@@ -33,15 +33,14 @@ public class CustomGridCalendar extends BtCalendarView{
 		initialize(provider, new CustomYearProvider(this, mSelectedDay.getYear()));
 	}
 	
-	public void setSelectedDate(int year,int month,int day){
+	public void setSelectedDate(int year, int month, int day){
 		mSelectedDay = new BtDate(year, month, day);
 		mDayAdapter.setSelectedDay(mSelectedDay);
-
 	}
 	
 	@Override
 	public void onDateSelected(int year, int month, int day) {
-		setSelectedDate(year,month,day);
+		setSelectedDate(year, month, day);
 		super.onDateSelected(year, month, day);
 	}
 	

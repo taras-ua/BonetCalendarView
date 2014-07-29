@@ -25,10 +25,8 @@ public class ExampleActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
-		
-		
+
 		setContentView(R.layout.activity_bonet_calendar_view_example);
 		
 		mMinDay = 1;
@@ -39,27 +37,28 @@ public class ExampleActivity extends Activity {
 		mMaxMonth = 11;
 		mMaxYear = 2015;
 		
-		((Button) findViewById(R.id.example_custom)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.example_custom).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				openActivity(CustomGridCalendarActivity.class);
 			}
 		});
 		
-		((Button) findViewById(R.id.example_grid)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.example_grid).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				openActivity(GridCalendarActivity.class);
 			}
 		});
 		
-		((Button) findViewById(R.id.example_list)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.example_list).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				openActivity(ListCalendarActivity.class);
 			}
 		});
-		((Button) findViewById(R.id.min_date_button)).setOnClickListener(new OnClickListener() {
+
+		findViewById(R.id.min_date_button).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				
@@ -74,7 +73,7 @@ public class ExampleActivity extends Activity {
 			}
 		});
 		
-		((Button) findViewById(R.id.max_date_button)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.max_date_button).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				
@@ -88,32 +87,27 @@ public class ExampleActivity extends Activity {
 				dpg.show();
 			}
 		});
-		
-		
-		
-		
+
 	}
 
 	private void setMinDate(int year, int month, int day){
 		mMinYear = year;
 		mMinMonth = month;
 		mMinDay = day;
-		
 
-		Toast.makeText(getApplicationContext(),"Min Day is: "+year+"/"+month+"/"+day, Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(), "Min Day is: " + year + "/" + month + "/" + day, Toast.LENGTH_SHORT).show();
 	}
 	
 	private void setMaxDate(int year, int month, int day){
 		mMaxYear = year;
 		mMaxMonth = month;
 		mMaxDay = day;
-		
-		Toast.makeText(getApplicationContext(),"Max Day is: "+year+"/"+month+"/"+day, Toast.LENGTH_SHORT).show();
+
+		Toast.makeText(getApplicationContext(), "Max Day is: " + year + "/" + month + "/" + day, Toast.LENGTH_SHORT).show();
 	}
 	
 	protected void openActivity(Class<? extends Activity> act) {
-		
-		
+
 		Intent i = new Intent(this, act);
 		
 		i.putExtra("MIN_DAY", mMinDay);

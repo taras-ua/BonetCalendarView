@@ -19,14 +19,14 @@ public class CustomYearAdapter extends MonthListAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
-		View  v = convertView;
-		if(null == v){ 
-			v = LayoutInflater.from(getContext()).inflate(R.layout.weekday_textview, null);
+		View  view = convertView;
+		if(null == view) {
+			view = LayoutInflater.from(getContext()).inflate(R.layout.weekday_textview, null);
 		}
 		
-		TextView tv = (TextView) v;
+		TextView tv = (TextView) view;
 		tv.setText(DateFormatSymbols.getInstance().getShortMonths()[position]);
 		
-		return v;
+		return view;
 	}
 }

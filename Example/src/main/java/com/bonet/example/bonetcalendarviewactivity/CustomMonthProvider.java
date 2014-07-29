@@ -25,15 +25,15 @@ public class CustomMonthProvider extends GridBtMonthViewProvider {
 		/* Let's try something funny here: Inflate a custom for the month view
 		 * That will show the weekdays names. Shall we?*/
 		
-		View v = LayoutInflater.from(super.getContext()).inflate(R.layout.custom_month_view, null);
+		View view = LayoutInflater.from(super.getContext()).inflate(R.layout.custom_month_view, null);
 		
-		GridView weekdaysContainer = (GridView)v.findViewById(R.id.weekdays_container);
+		GridView weekdaysContainer = (GridView) view.findViewById(R.id.weekdays_container);
 		
 		// Sets the names 
 		weekdaysContainer.setAdapter(new ArrayAdapter<String>(getContext(), R.layout.weekday_textview, gettWeekdayNames()));
 		
 		// The actual container
-		setGridView((GridView)v.findViewById(R.id.month_container));
+		setGridView((GridView) view.findViewById(R.id.month_container));
 		
 		// Sets the adapter
 		getGridView().setAdapter(getAdapter());
@@ -41,7 +41,7 @@ public class CustomMonthProvider extends GridBtMonthViewProvider {
 		// And sets the listener
 		getGridView().setOnItemClickListener(getDefaultItemClickListener());
 		
-		return v;
+		return view;
 	}
 	
 	/*
@@ -54,8 +54,8 @@ public class CustomMonthProvider extends GridBtMonthViewProvider {
 		
 		String [] temp = DateFormatSymbols.getInstance().getShortWeekdays();
 		
-		for(int i=0;i<7;i++){
-			defaultWeekNames.add(temp[(i)%7+java.util.Calendar.SUNDAY].substring(0, 1));
+		for(int i = 0; i < 7; i++){
+			defaultWeekNames.add(temp[(i) % 7 + java.util.Calendar.SUNDAY].substring(0, 1));
 		}
 		
 		return defaultWeekNames;

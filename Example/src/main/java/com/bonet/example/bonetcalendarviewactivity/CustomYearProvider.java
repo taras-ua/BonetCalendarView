@@ -29,9 +29,9 @@ public class CustomYearProvider extends BtYearViewProvider {
 		 * and take a lot of space. Here we create a YearProvider
 		 * that displays the months in a grid view */
 		
-		if(mGridView == null){
+		if(mGridView == null) {
 			// inflates the grid view
-			mGridView = (GridView)LayoutInflater.from(getCalendar().getContext()).inflate(R.layout.grid_view, null);
+			mGridView = (GridView) LayoutInflater.from(getCalendar().getContext()).inflate(R.layout.grid_view, null);
 			
 			// 4 columns seems nice
 			mGridView.setNumColumns(3);
@@ -43,8 +43,9 @@ public class CustomYearProvider extends BtYearViewProvider {
 			mGridView.setOnItemClickListener(new OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
-					if(! (getCalendar() ==null))
-						getCalendar().notifyMonthChanged(new BtMonth(getYear(),position));
+					if(! (getCalendar() == null)) {
+                        getCalendar().notifyMonthChanged(new BtMonth(getYear(), position));
+                    }
 				}
 			});
 		}
