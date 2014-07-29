@@ -176,7 +176,7 @@ public class DayGridAdapter extends BaseAdapter {
 	
 	/**
 	 * Sets the min date
-	 * @param the date
+	 * @param date the date
 	 */
 	public void setMinDate(BtDate date){
 		mMinDate = date;
