@@ -104,7 +104,7 @@ public class DayGridAdapter extends BaseAdapter {
 		
 		// Gets the date for the position
 		day = mMonthDisplay.getDayAt(row, column);
-		
+
 		// Sets the Text
 		tv.setText(day +"");
 		
@@ -112,18 +112,16 @@ public class DayGridAdapter extends BaseAdapter {
 		isValid = (mMonthDisplay.isWithinCurrentMonth(row, column)) &&
 			mMonth.getDate(day).isWithinBounds(mMinDate,mMaxDate) ;
 		
-		// Displays text with a lighter color in case the cell is no part of the month
-		int textColor = isValid? Color.BLACK: Color.LTGRAY;
-		
 		// And disables the click
 		convertView.setEnabled(isValid);
-		
-		// Sets the text color
-		tv.setTextColor(textColor);
 
         BtDate btDate = new BtDate(mMonth.getYear(), mMonth.getMonth(), day);
         if(isValid && btDate.equals(BtDate.today())) {
             tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_Today);
+        } else if (isValid) {
+            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
+        } else {
+            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
         }
 		
 		return convertView;
