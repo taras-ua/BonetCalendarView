@@ -48,13 +48,14 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
-				if(! (getCalendar() ==null))
-					getCalendar().notifyMonthChanged(new BtMonth(getYear(),position));
+				if(! (getCalendar() == null)) {
+                    getCalendar().notifyMonthChanged(new BtMonth(getYear(), position));
+                }
 			}
 		
 		});
 
-		mAdapter = new MonthListAdapter(getCalendar(),getYear());
+		mAdapter = new MonthListAdapter(getCalendar(), getYear());
 		
 		mListView.setAdapter(mAdapter);
 		
@@ -63,8 +64,9 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 
 	@Override
 	public void updateView() {
-		if(mAdapter !=null)
-			mAdapter.notifyDataSetChanged();
+		if(mAdapter != null) {
+            mAdapter.notifyDataSetChanged();
+        }
 	}
 	
 	/**
@@ -78,7 +80,7 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 	
 	/**
 	 * Sets the list view that is used to display the months
-	 * @param adapter
+	 * @param lv the list view
 	 */
 	public void setListView(ListView lv) {
 		mListView = lv;
@@ -87,8 +89,9 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
-				if(! (getCalendar() ==null))
-					getCalendar().notifyMonthChanged(new BtMonth(getYear(),position));
+				if(!(getCalendar() == null)) {
+                    getCalendar().notifyMonthChanged(new BtMonth(getYear(), position));
+                }
 			}
 		
 		});
@@ -100,8 +103,9 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 	
 	@Override
 	public void setYear(int year) {
-		if(mAdapter !=null)
-			mAdapter.setYear(year);
+		if(mAdapter != null) {
+            mAdapter.setYear(year);
+        }
 		super.setYear(year);
 	}
 	

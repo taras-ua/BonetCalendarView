@@ -78,8 +78,9 @@ public class BtDate implements Comparable<BtDate>{
 	@Override
 	public int compareTo(BtDate another) {
 		if(this.mYear == another.mYear) {
-			if (this.mMonth == another.getMonth())
-				return this.mDay - another.mDay;			
+			if (this.mMonth == another.getMonth()) {
+                return this.mDay - another.mDay;
+            }
 				
 			return this.mMonth - another.mMonth;
 		}
@@ -92,7 +93,7 @@ public class BtDate implements Comparable<BtDate>{
 	 * @return true if the current day is before or equal the given one
 	 */
 	public boolean equals(BtDate d) {
-		return this.compareTo(d)==0;
+		return this.compareTo(d) == 0;
 	}
 	
 	/**
@@ -100,7 +101,7 @@ public class BtDate implements Comparable<BtDate>{
 	 * @return true if the current day is before or equal the given one
 	 */
 	public boolean beforeOrEqual(BtDate day) {
-		return (day==null) || this.compareTo(day)<=0;
+		return (day == null) || this.compareTo(day) <= 0;
 	}
 	
 	/**
@@ -108,7 +109,7 @@ public class BtDate implements Comparable<BtDate>{
 	 * @return true if the current day is after or equal the given one
 	 */
 	public boolean afterOrEqual(BtDate day) {
-		return (day==null) || this.compareTo(day)>=0;
+		return (day == null) || this.compareTo(day) >= 0;
 	}
 	
 	/**
@@ -159,7 +160,7 @@ public class BtDate implements Comparable<BtDate>{
 	/**
 	 * The first date
 	 */
-	public static final BtDate MIN_BTDATE = new BtDate(0,0,-1);
+	public static final BtDate MIN_BTDATE = new BtDate(0, 0, -1);
 	
 	public static final BtDate MAX_BTDATE = new BtDate(Integer.MAX_VALUE, 11, 31);
 	

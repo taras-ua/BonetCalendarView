@@ -90,7 +90,7 @@ public class BtCalendar {
 	 * @return The next month
 	 */
 	public BtMonth getNextMonth(){
-		return new BtMonth(mMonth.getYear()+mMonth.getMonth()/11,(mMonth.getMonth()+1)%12);
+		return new BtMonth(mMonth.getYear() + mMonth.getMonth() / 11, (mMonth.getMonth() + 1) % 12);
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class BtCalendar {
 	 * @return The previous month
 	 */
 	public BtMonth getPreviousMonth(){
-		return (mMonth.getMonth()==0)? new BtMonth(mMonth.getYear()-1,11):new BtMonth(mMonth.getYear(), mMonth.getMonth()-1);
+		return (mMonth.getMonth() == 0) ? new BtMonth(mMonth.getYear() - 1, 11) : new BtMonth(mMonth.getYear(), mMonth.getMonth() - 1);
 	}
 	
 	

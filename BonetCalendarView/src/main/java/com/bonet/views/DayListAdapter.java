@@ -52,19 +52,14 @@ class DayListAdapter extends BaseAdapter{
 	// The boundarie dates
 	private BtDate mMinDay, mMaxDay;
 	
-	public DayListAdapter(Context context, 
-			BtMonth month,
-			BtDate minDay,
-			BtDate maxDay) {
+	public DayListAdapter(Context context, BtMonth month, BtDate minDay, BtDate maxDay) {
 
 		mCalendar = (GregorianCalendar) GregorianCalendar.getInstance();
 
 		setMonth(month);
 
 		mContext = context;
-
 		mMinDay = minDay;
-		
 		mMaxDay = maxDay;
 		
 	}
@@ -87,20 +82,21 @@ class DayListAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
-		View v = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
+		View view = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
 
-		TextView tv = (TextView)v.findViewById(R.id.bt_grid_cell_text);
+		TextView tv = (TextView) view.findViewById(R.id.bt_grid_cell_text);
 
 		mCalendar.set(GregorianCalendar.DAY_OF_MONTH, position + 1);
 
 		tv.setText( (new SimpleDateFormat("EEE, MMM, d, yyyy", Locale.getDefault())).format(mCalendar.getTime()));
 
-		if(!mMonth.getDate(position+1).isWithinBounds(mMinDay, mMaxDay))
-			tv.setTextColor(Color.LTGRAY);
-		else
-			tv.setTextColor(Color.BLACK);
+		if(!mMonth.getDate(position + 1).isWithinBounds(mMinDay, mMaxDay)) {
+            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
+        } else {
+            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
+        }
 
-		return v;
+		return view;
 	}
 
 	public void setMonth(BtMonth month) {

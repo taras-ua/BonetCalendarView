@@ -60,14 +60,14 @@ public class BtMonth {
 	 * @return the month that comes after this one
 	 */
 	public BtMonth next() {
-		return new BtMonth(mYear+mMonth/11,(mMonth+1)%12);
+		return new BtMonth(mYear + mMonth / 11, (mMonth + 1) % 12);
 	}
 	
 	/**
 	 * @return the month that comes before this one
 	 */
 	public BtMonth previous() {
-		return (mMonth==0)? new BtMonth(mYear-1,11):new BtMonth(mYear, mMonth-1);
+		return (mMonth == 0) ? new BtMonth(mYear - 1, 11) : new BtMonth(mYear, mMonth - 1);
 	}
 	
 	/**
@@ -95,9 +95,11 @@ public class BtMonth {
 	 * @return
 	 */
 	public boolean equals(BtMonth m) {
-		if(m==null) return false;
+		if(m == null) {
+            return false;
+        }
 		
-		return m.getYear()==mYear && m.getMonth() == mMonth;
+		return m.getYear() == mYear && m.getMonth() == mMonth;
 	}
 
 	/**
@@ -124,6 +126,6 @@ public class BtMonth {
 	 * @return the month associated with the date
 	 */
 	public static BtMonth fromDay(BtDate date) {
-		return new BtMonth(date.getYear(),date.getMonth());
+		return new BtMonth(date.getYear(), date.getMonth());
 	}
 }

@@ -55,7 +55,7 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 		mContext = context;
 		
 		Log.d("", "Criando DayGridAdapter");
-		mAdapter = new DayGridAdapter(context,month,getMinDate(),getMaxDate());
+		mAdapter = new DayGridAdapter(context, month, getMinDate(), getMaxDate());
 
 		mMonthDisplay = new MonthDisplayHelper(month.getYear(), month.getMonth());
 	
@@ -65,17 +65,18 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 			public void onItemClick(AdapterView<?> adapter, View arg1, int position,
 					long arg3) {
 				
-				int fp = mMonthDisplay.getRowOf(1)*7+mMonthDisplay.getColumnOf(1);
-				int lp = fp+ mMonthDisplay.getNumberOfDaysInMonth();
+				int fp = mMonthDisplay.getRowOf(1) * 7 + mMonthDisplay.getColumnOf(1);
+				int lp = fp + mMonthDisplay.getNumberOfDaysInMonth();
 				
 				// Checks to see if the position selected represents a date within the month
-				if(position >= fp && position <lp) {
+				if(position >= fp && position < lp) {
 				
 					BtDate day;
 					// Checks to see if the selected date is within the defined bounds
-					if( (day = getMonth().getDate(position+1-fp)).isWithinBounds(getMinDate(),getMaxDate()))
-						selectDay(day);
-					
+					if( (day = getMonth().getDate(position + 1 - fp)).isWithinBounds(getMinDate(), getMaxDate())) {
+                        selectDay(day);
+                    }
+
 				}
 			}
 		};
@@ -116,8 +117,9 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 	@Override
 	public void updateView() {
 
-		if(null != mAdapter)
-			mAdapter.notifyDataSetChanged();
+		if(null != mAdapter) {
+            mAdapter.notifyDataSetChanged();
+        }
 	}
 	
 	/**
@@ -126,8 +128,9 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 	 */
 	public void setAdapter(DayGridAdapter adapter) {
 		mAdapter = adapter;
-		if(mGridView != null)
-			mGridView.setAdapter(adapter);
+		if(mGridView != null) {
+            mGridView.setAdapter(adapter);
+        }
 	}
 
 	@Override

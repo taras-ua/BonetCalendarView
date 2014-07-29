@@ -83,12 +83,12 @@ public class MonthListAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
 		View  v = convertView;
-		if(null == v){ 
+		if(null == v) {
 			v = LayoutInflater.from(mParentCalendar.getContext()).inflate(R.layout.calendar_day_layout, null);
 		}
 		
 		TextView tv = (TextView)v.findViewById(R.id.bt_grid_cell_text);
-		tv.setText(mYear +", "+ DateFormatSymbols.getInstance().getMonths()[position]);
+		tv.setText(mYear + ", " + DateFormatSymbols.getInstance().getMonths()[position]);
 		
 		return v;
 	}

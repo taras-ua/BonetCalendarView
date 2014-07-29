@@ -59,11 +59,8 @@ public class DayGridAdapter extends BaseAdapter {
 	 * @param maxDate
 	 */
 	public DayGridAdapter(Context context, BtMonth month, BtDate minDate, BtDate maxDate){
-		
 		mContext = context;
-		
 		mMinDate = minDate;
-		
 		mMaxDate = maxDate;
 		
 		setMonth(month);
@@ -88,7 +85,7 @@ public class DayGridAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
 		// Transform the 1D position two 2D
-		int column = position %7;
+		int column = position % 7;
 		int row = position / 7;
 		int day;
 		
@@ -105,11 +102,10 @@ public class DayGridAdapter extends BaseAdapter {
 		day = mMonthDisplay.getDayAt(row, column);
 
 		// Sets the Text
-		tv.setText(day +"");
+		tv.setText(day + "");
 		
 		// Whether the current cell represents a valid date
-		isValid = (mMonthDisplay.isWithinCurrentMonth(row, column)) &&
-			mMonth.getDate(day).isWithinBounds(mMinDate,mMaxDate) ;
+		isValid = (mMonthDisplay.isWithinCurrentMonth(row, column)) && mMonth.getDate(day).isWithinBounds(mMinDate, mMaxDate) ;
 		
 		// And disables the click
 		convertView.setEnabled(isValid);
@@ -132,14 +128,14 @@ public class DayGridAdapter extends BaseAdapter {
 	 */
 	public void setMonth(BtMonth month) {
 		
-		Log.d("",month+"");
+		Log.d("", month + "");
 		mMonth = month;
 		
 		// Starts at Sunday
 		mMonthDisplay = new MonthDisplayHelper(mMonth.getYear(), mMonth.getMonth());
 		
 		// number of cells is 7 times the row of the last day plus 1.
-		mNumCells = (mMonthDisplay.getRowOf(mMonthDisplay.getNumberOfDaysInMonth())+1) * 7;
+		mNumCells = (mMonthDisplay.getRowOf(mMonthDisplay.getNumberOfDaysInMonth()) + 1) * 7;
 	}
 	
 	public BtMonth getMonth(){

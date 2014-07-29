@@ -57,7 +57,7 @@ public class ListBtMonthViewProvider extends BtMonthViewProvider {
 	@Override
 	public View getView() {
 		
-		if(null== mListView){
+		if(null== mListView) {
 			
 			// Inflates the list
 			mListView = (ListView) LayoutInflater.from(mContext).inflate(R.layout.month_list_view,null);
@@ -71,11 +71,12 @@ public class ListBtMonthViewProvider extends BtMonthViewProvider {
 				@Override
 				public void onItemClick(AdapterView<?> adapter, View arg1, int position,
 						long arg3) {
-					BtDate theDay = getMonth().getDate(position+1);
+					BtDate theDay = getMonth().getDate(position + 1);
 					
 					// Checks if the date is within the bounds
-					if(theDay.isWithinBounds(getMinDate(),getMaxDate()))
-						selectDay(theDay);
+					if(theDay.isWithinBounds(getMinDate(),getMaxDate())) {
+                        selectDay(theDay);
+                    }
 				}
 			});
 		}
@@ -95,8 +96,9 @@ public class ListBtMonthViewProvider extends BtMonthViewProvider {
 	 */
 	@Override
 	public void updateView() {
-		if(null !=mListView)
-			mAdapter.notifyDataSetChanged();
+		if(null != mListView) {
+            mAdapter.notifyDataSetChanged();
+        }
 	}
 
 	/**

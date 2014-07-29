@@ -70,7 +70,7 @@ public abstract class BtYearViewProvider {
 	 * @return the year view title
 	 */
 	public String getTitle(){
-		return mYear+"";
+		return mYear + "";
 	}
 	
 	/**
@@ -78,8 +78,9 @@ public abstract class BtYearViewProvider {
 	 * @param year
 	 */
 	public void setYear(int year){
-		if(mYear==year)
-			return;
+		if(mYear == year) {
+            return;
+        }
 		
 		mYear = year;
 		updateView();
@@ -95,7 +96,7 @@ public abstract class BtYearViewProvider {
 	 * @param calendar
 	 */
 	public void setCalendar (BtCalendarView calendar){
-		mParentCalendar=calendar;
+		mParentCalendar = calendar;
 	}
 	
 	/**
@@ -130,7 +131,7 @@ public abstract class BtYearViewProvider {
 	
 	/**
 	 * Sets the min date
-	 * @param the date
+	 * @param date the date
 	 */
 	public void setMinDate(BtDate date){
 		mMinDate = date;

@@ -107,8 +107,9 @@ public abstract class BtMonthViewProvider {
 	 * @param day
 	 */
 	protected void selectDay(int year, int month, int day) {
-		if(mListener!=null)
-			mListener.onDateSelected(year, month, day);
+		if(mListener != null) {
+            mListener.onDateSelected(year, month, day);
+        }
 	}
 	
 	/**
@@ -143,7 +144,7 @@ public abstract class BtMonthViewProvider {
 	
 	/**
 	 * Sets the min date
-	 * @param the date
+	 * @param date the date
 	 */
 	public void setMinDate(BtDate date){
 		mMinDate = date;

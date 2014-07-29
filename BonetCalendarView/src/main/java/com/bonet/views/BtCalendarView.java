@@ -65,7 +65,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	private ViewSwitcher mContainer;
 
 	/* The title container */
-	private TextView mTituloTextView;
+	private TextView mHeadlineTextView;
 
 	/* The buttons used to navigate between months / years */
 	private Button mNextButton, mPrevButton;
@@ -102,7 +102,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 		mCalendar = new BtCalendar(currentMonth);
 
 		// Initializes view contents
-		mTituloTextView = (TextView)findViewById(R.id.calendar_headline);
+		mHeadlineTextView = (TextView)findViewById(R.id.calendar_headline);
 		mContainer = (ViewSwitcher)findViewById(R.id.calendar_content_container);
 
 		// Adds the view obtained from the month provider to the container
@@ -116,12 +116,13 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 
 			@Override
 			public void onClick(View v) {
-				if(v.getId() == mNextButton.getId())
-					showNextMonth();
-				else if (v.getId() == mPrevButton.getId())
-					showPreviousMonth();
-				else if(v.getId() == mTituloTextView.getId())
-					setAsYear();
+				if(v.getId() == mNextButton.getId()) {
+                    showNextMonth();
+                } else if (v.getId() == mPrevButton.getId()) {
+                    showPreviousMonth();
+                } else if(v.getId() == mHeadlineTextView.getId()) {
+                    setAsYear();
+                }
 			}
 		};
 
@@ -130,18 +131,19 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 
 			@Override
 			public void onClick(View v) {
-				if(v.getId() == mNextButton.getId())
-					setYear(mCalendar.getYear()+1);
-				else if (v.getId() == mPrevButton.getId())
+				if(v.getId() == mNextButton.getId()) {
+                    setYear(mCalendar.getYear() + 1);
+                } else if (v.getId() == mPrevButton.getId()) {
 					setYear(mCalendar.getYear()-1);
-				else if(v.getId() == mTituloTextView.getId())
+                } else if(v.getId() == mHeadlineTextView.getId()) {
 					setAsMonth();
-			}
+                }
+            }
 		};
 
 		mPrevButton = (Button) findViewById(R.id.calendar_button_prev);
 		mNextButton = (Button) findViewById(R.id.calendar_button_next);
-		mTituloTextView = (TextView) findViewById(R.id.calendar_headline);
+		mHeadlineTextView = (TextView) findViewById(R.id.calendar_headline);
 
 		setMonth(currentMonth);
 		
@@ -271,7 +273,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 
 	/**
 	 * Changes the month being displayed
-	 * @param months
+	 * @param month
 	 */
 	public void notifyMonthChanged(BtMonth month) {
 		setMonth(month);
@@ -306,7 +308,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 * @return The text view that displays the title
 	 */
 	public TextView getTitleTextView(){
-		return mTituloTextView;
+		return mHeadlineTextView;
 	}
 	
 	/**
@@ -321,10 +323,11 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 * Sets the title depending on the view being displayed
 	 */
 	protected void setTitle(){
-		if(mContainer.getDisplayedChild() == MODE_MONTH)
-			mTituloTextView.setText(mMonthProvider.getTitle());
-		else
-			mTituloTextView.setText(mYearProvider.getTitle());
+		if(mContainer.getDisplayedChild() == MODE_MONTH) {
+            mHeadlineTextView.setText(mMonthProvider.getTitle());
+        } else {
+            mHeadlineTextView.setText(mYearProvider.getTitle());
+        }
 	}
 
 
@@ -394,7 +397,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 */
 	protected void setAsMonth(){
 
-		mTituloTextView.setOnClickListener(mListenerForMonthMode);		
+		mHeadlineTextView.setOnClickListener(mListenerForMonthMode);
 		mNextButton.setOnClickListener(mListenerForMonthMode);		
 		mPrevButton.setOnClickListener(mListenerForMonthMode);
 
@@ -411,7 +414,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 */
 	protected void setAsYear(){
 
-		mTituloTextView.setOnClickListener(mListenerForYearMode);		
+		mHeadlineTextView.setOnClickListener(mListenerForYearMode);
 		mNextButton.setOnClickListener(mListenerForYearMode);		
 		mPrevButton.setOnClickListener(mListenerForYearMode);
 
@@ -428,8 +431,9 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	@Override
 	public void onDateSelected(int year, int month, int day) {
 
-		if(mListener!=null)
-			mListener.onDateSelected(year,month,day);
+		if(mListener!=null) {
+            mListener.onDateSelected(year, month, day);
+        }
 	}
 
 	
