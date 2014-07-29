@@ -88,7 +88,7 @@ class DayListAdapter extends BaseAdapter{
 
 		mCalendar.set(GregorianCalendar.DAY_OF_MONTH, position + 1);
 
-		tv.setText( (new SimpleDateFormat("EEE, MMM, d, yyyy", Locale.getDefault())).format(mCalendar.getTime()));
+		tv.setText( (new SimpleDateFormat(Constants.DAY_LIST_DATEFORMATE, Locale.getDefault())).format(mCalendar.getTime()));
 
 		if(!mMonth.getDate(position + 1).isWithinBounds(mMinDay, mMaxDay)) {
             tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);

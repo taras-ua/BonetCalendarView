@@ -88,7 +88,7 @@ public class MonthListAdapter extends BaseAdapter{
 		}
 		
 		TextView tv = (TextView)v.findViewById(R.id.bt_grid_cell_text);
-		tv.setText(mYear + ", " + DateFormatSymbols.getInstance().getMonths()[position]);
+		tv.setText(mYear + Constants.MONTH_LIST_SEPERATOR + DateFormatSymbols.getInstance().getMonths()[position]);
 		
 		return v;
 	}

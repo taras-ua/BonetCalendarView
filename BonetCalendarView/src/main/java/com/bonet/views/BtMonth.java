@@ -53,7 +53,7 @@ public class BtMonth {
 	@Override
 	public String toString() {
 		GregorianCalendar calendar = new GregorianCalendar(mYear, mMonth, 1);
-		return (new SimpleDateFormat("MMMM, yyyy", Locale.getDefault())).format(calendar.getTime());
+		return (new SimpleDateFormat(Constants.MONTH_DATEFORMATE, Locale.getDefault())).format(calendar.getTime());
 	}
 
 	/**
