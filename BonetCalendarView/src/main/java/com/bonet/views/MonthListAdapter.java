@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 
 /**
  * Adapter that displays month as strings.
@@ -81,16 +83,25 @@ public class MonthListAdapter extends BaseAdapter{
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHolder viewHolder = null;
+		View view = null;
+
+		if(convertView == null) {
+            view = LayoutInflater.from(mParentCalendar.getContext()).inflate(R.layout.calendar_day_layout, null);
+            viewHolder = new ViewHolder();
+            viewHolder.textView = (TextView) view.findViewById(R.id.bt_grid_cell_text);
+            view.setTag(viewHolder);
+		} else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
+
+        viewHolder.textView.setText(mYear + Constants.MONTH_LIST_SEPERATOR + DateFormatSymbols.getInstance().getMonths()[position]);
 		
-		View  v = convertView;
-		if(null == v) {
-			v = LayoutInflater.from(mParentCalendar.getContext()).inflate(R.layout.calendar_day_layout, null);
-		}
-		
-		TextView tv = (TextView)v.findViewById(R.id.bt_grid_cell_text);
-		tv.setText(mYear + Constants.MONTH_LIST_SEPERATOR + DateFormatSymbols.getInstance().getMonths()[position]);
-		
-		return v;
+		return view;
 	}
-	
+
+    static class ViewHolder {
+        public TextView textView;
+    }
 }
