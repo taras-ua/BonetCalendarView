@@ -17,7 +17,6 @@ package com.bonet.views;
 import com.bonet.views.bonetcalendarview.R;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.util.MonthDisplayHelper;
 import android.view.LayoutInflater;
@@ -100,7 +99,7 @@ public class DayGridAdapter extends BaseAdapter {
 			 convertView = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
 		}
 		
-		tv = (TextView)convertView.findViewById(R.id.text);
+		tv = (TextView)convertView.findViewById(R.id.bt_grid_cell_text);
 		
 		// Gets the date for the position
 		day = mMonthDisplay.getDayAt(row, column);

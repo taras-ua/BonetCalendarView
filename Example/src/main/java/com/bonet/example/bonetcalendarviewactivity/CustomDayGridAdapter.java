@@ -57,11 +57,11 @@ public class CustomDayGridAdapter extends DayGridAdapter {
 		int fp = getDisplayHelper().getRowOf(1)*7+ getDisplayHelper().getColumnOf(1);
 		
 		if(getMonth().getDate(position + 1 - fp).equals(mSelectedDay)){
-			TextView tv = (TextView) v.findViewById(R.id.text);
+			TextView tv = (TextView) v.findViewById(R.id.bt_grid_cell_text);
 			tv.setBackgroundResource(R.drawable.selected_day_button_style);
 		}
 		else
-			v.findViewById(R.id.text).setBackgroundColor(Color.TRANSPARENT);
+			v.findViewById(R.id.bt_grid_cell_text).setBackgroundColor(Color.TRANSPARENT);
 		
 		return v;
 	}

@@ -89,7 +89,7 @@ class DayListAdapter extends BaseAdapter{
 
 		View v = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
 
-		TextView tv = (TextView)v.findViewById(R.id.text);
+		TextView tv = (TextView)v.findViewById(R.id.bt_grid_cell_text);
 
 		mCalendar.set(GregorianCalendar.DAY_OF_MONTH, position + 1);
 

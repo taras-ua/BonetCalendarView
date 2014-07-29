@@ -49,4 +49,18 @@
 
     <style name="BonetCalendarTheme.Text.Today" parent="@style/BonetCalendarTheme.Text" />
 
+    <style name="BonetCalendarTheme.Grid" />
+
+    <style name="BonetCalendarTheme.Grid.Day">
+        <item name="android:layout_height">@dimen/bt_grid_cell_height</item>
+        <item name="android:minHeight">@dimen/bt_grid_cell_height</item>
+        <item name="android:padding">@dimen/bt_grid_cell_padding</item>
+    </style>
+
+    <style name="BonetCalendarTheme.Grid.Day.Text" parent="BonetCalendarTheme.Text">
+        <item name="android:textSize">@dimen/bt_grid_cell_text_textsize</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>
