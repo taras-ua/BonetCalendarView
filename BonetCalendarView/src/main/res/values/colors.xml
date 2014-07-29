@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue">#3030FF</color>
-    <color name="light_green">#1ACB76</color>
-    <color name="black">#000000</color>
-    <color name="white">#FFFFFF</color>
-    <color name="background_color">#EEEEEE</color>
-    <color name="dark_green">#1D9159</color>
-    <color name="grey">#ccc</color>
-    <color name="darker_grey">#999</color>
-    <color name="dark_grey">#222</color>
-    <color name="light_grey">#ffcccccc</color>
-    <color name="bt_grid_weekdays_container_listseperator">#00000000</color>
+
+    <color name="bonet_calendar_blue">#3030FF</color>
+    <color name="bonet_calendar_date_active">@android:color/black</color>
+    <color name="bonet_calendar_date_inactive">#ffcccccc</color>
+    <color name="bonet_calendar_grid_weekdays_container_listseperator">#00000000</color>
+    <color name="bonet_calendar_light_green">#1ACB76</color>
 
 </resources>
