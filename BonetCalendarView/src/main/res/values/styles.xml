@@ -63,4 +63,17 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="BonetCalendarTheme.Grid.Month">
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="BonetCalendarTheme.Grid.Month.WeekDaysContainer">
+        <item name="android:listSelector">@color/bt_grid_weekdays_container_listseperator</item>
+    </style>
+
+    <style name="BonetCalendarTheme.Grid.Month.DaysContainer">
+        <item name="android:layout_marginTop">@dimen/bt_grid_month_daycontainer_margintop</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

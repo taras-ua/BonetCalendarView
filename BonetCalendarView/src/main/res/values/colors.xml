@@ -10,5 +10,6 @@
     <color name="darker_grey">#999</color>
     <color name="dark_grey">#222</color>
     <color name="light_grey">#ffcccccc</color>
+    <color name="bt_grid_weekdays_container_listseperator">#00000000</color>
 
 </resources>
