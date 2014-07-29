@@ -81,19 +81,27 @@ class DayListAdapter extends BaseAdapter{
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder = null;
+        View view = null;
 
-		View view = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
-
-		TextView tv = (TextView) view.findViewById(R.id.bt_grid_cell_text);
+        if (convertView == null) {
+            view = LayoutInflater.from(mContext).inflate(R.layout.calendar_day_layout, null);
+            viewHolder = new ViewHolder();
+            viewHolder.textView = (TextView) view.findViewById(R.id.bt_grid_cell_text);
+            view.setTag(viewHolder);
+        } else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
 
 		mCalendar.set(GregorianCalendar.DAY_OF_MONTH, position + 1);
 
-		tv.setText( (new SimpleDateFormat(Constants.DAY_LIST_DATEFORMATE, Locale.getDefault())).format(mCalendar.getTime()));
+        viewHolder.textView.setText( (new SimpleDateFormat(Constants.DAY_LIST_DATEFORMATE, Locale.getDefault())).format(mCalendar.getTime()));
 
 		if(!mMonth.getDate(position + 1).isWithinBounds(mMinDay, mMaxDay)) {
-            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
         } else {
-            tv.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
         }
 
 		return view;
@@ -118,4 +126,8 @@ class DayListAdapter extends BaseAdapter{
 	public void setMinDate(BtDate day) {
 		mMinDay = day;
 	}
+
+    static class ViewHolder {
+        public TextView textView;
+    }
 }
