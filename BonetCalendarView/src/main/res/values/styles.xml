@@ -47,7 +47,7 @@
         <item name="android:textColor">@color/bonet_calendar_date_inactive</item>
     </style>
 
-    <style name="BonetCalendarTheme.Text.Today" parent="@style/BonetCalendarTheme.Text" />
+    <style name="BonetCalendarTheme.Text.Today" parent="@style/BonetCalendarTheme.Text.DateActive" />
 
     <style name="BonetCalendarTheme.Grid" />
 
