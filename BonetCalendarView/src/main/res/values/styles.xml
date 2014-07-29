@@ -76,6 +76,13 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="BonetCalendarTheme.Grid.Weekname">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/bt_grid_weekname_textsize</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
     <style name="BonetCalendarTheme.GeneralSeparator">
         <item name="android:background">@color/bonet_calendar_light_green</item>
         <item name="android:layout_height">@dimen/bt_generalseparator_height</item>
