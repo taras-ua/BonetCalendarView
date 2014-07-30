@@ -8,8 +8,8 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.bonet.views.BtCalendarView;
 import com.bonet.views.BtMonth;
-import com.bonet.views.BtYearViewProvider;
-import com.bonet.views.MonthListAdapter;
+import com.bonet.views.Provider.BtYearViewProvider;
+import com.bonet.views.Adapter.MonthListAdapter;
 
 public class CustomYearProvider extends BtYearViewProvider {
 

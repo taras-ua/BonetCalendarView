@@ -1,7 +1,9 @@
-package com.bonet.views;
+package com.bonet.views.Adapter;
 
 import java.text.DateFormatSymbols;
 
+import com.bonet.views.BtCalendarView;
+import com.bonet.views.Constants;
 import com.bonet.views.bonetcalendarview.R;
 
 import android.content.Context;

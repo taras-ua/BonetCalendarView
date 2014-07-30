@@ -12,9 +12,13 @@
    See the License for the specific language governing permissions and
    limitations under the License. */
 
-package com.bonet.views;
+package com.bonet.views.Provider;
 
 import android.view.View;
+
+import com.bonet.views.BtDate;
+import com.bonet.views.BtMonth;
+import com.bonet.views.OnDateSelectedListener;
 
 
 /**
@@ -33,7 +37,7 @@ public abstract class BtMonthViewProvider {
 	private OnDateSelectedListener mListener;
 	
 	/* The minimum day to be displayed */
-	private  BtDate mMinDate;
+	private BtDate mMinDate;
 	
 	/* The maximum day to be displayed */
 	private BtDate mMaxDate;

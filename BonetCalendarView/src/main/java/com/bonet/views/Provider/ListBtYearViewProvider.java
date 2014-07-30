@@ -12,8 +12,10 @@
    See the License for the specific language governing permissions and
    limitations under the License. */
 
-package com.bonet.views;
+package com.bonet.views.Provider;
 
+import com.bonet.views.BtMonth;
+import com.bonet.views.Adapter.MonthListAdapter;
 import com.bonet.views.bonetcalendarview.R;
 
 import android.view.LayoutInflater;

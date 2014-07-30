@@ -12,12 +12,15 @@
    See the License for the specific language governing permissions and
    limitations under the License. */
 
-package com.bonet.views;
+package com.bonet.views.Adapter;
 
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+import com.bonet.views.BtDate;
+import com.bonet.views.BtMonth;
+import com.bonet.views.Constants;
 import com.bonet.views.bonetcalendarview.R;
 
 import android.content.Context;
@@ -35,7 +38,7 @@ import android.widget.TextView;
  *  
  * @author Eduardo
  */
-class DayListAdapter extends BaseAdapter{
+public class DayListAdapter extends BaseAdapter{
 
 	// The calendar to help us display the dates
 	private GregorianCalendar mCalendar;

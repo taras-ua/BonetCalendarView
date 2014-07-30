@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import com.bonet.views.BtCalendarView;
 import com.bonet.views.BtDate;
 import com.bonet.views.BtMonth;
-import com.bonet.views.GridBtMonthViewProvider;
+import com.bonet.views.Provider.GridBtMonthViewProvider;
 
 public class CustomGridCalendar extends BtCalendarView{
 

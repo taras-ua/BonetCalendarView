@@ -12,9 +12,12 @@
    See the License for the specific language governing permissions and
    limitations under the License. */
 
-package com.bonet.views;
+package com.bonet.views.Provider;
 
 import android.view.View;
+
+import com.bonet.views.BtCalendarView;
+import com.bonet.views.BtDate;
 
 /**
  * The BtMonthViewProvider abstract class is responsible for creating, and handling,

@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
 import com.bonet.views.BtMonth;
-import com.bonet.views.GridBtMonthViewProvider;
+import com.bonet.views.Provider.GridBtMonthViewProvider;
 
 public class CustomMonthProvider extends GridBtMonthViewProvider {
 

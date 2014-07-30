@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.bonet.views.BtDate;
 import com.bonet.views.BtMonth;
-import com.bonet.views.DayGridAdapter;
+import com.bonet.views.Adapter.DayGridAdapter;
 
 public class CustomDayGridAdapter extends DayGridAdapter {
 	

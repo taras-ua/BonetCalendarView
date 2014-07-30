@@ -12,14 +12,11 @@
    See the License for the specific language governing permissions and
    limitations under the License. */
 
-package com.bonet.views;
-
-
+package com.bonet.views.Provider;
+import com.bonet.views.Adapter.DayListAdapter;
+import com.bonet.views.BtDate;
+import com.bonet.views.BtMonth;
 import com.bonet.views.bonetcalendarview.R;
-
-
-
-
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -57,7 +54,7 @@ public class ListBtMonthViewProvider extends BtMonthViewProvider {
 	@Override
 	public View getView() {
 		
-		if(null== mListView) {
+		if(null == mListView) {
 			
 			// Inflates the list
 			mListView = (ListView) LayoutInflater.from(mContext).inflate(R.layout.month_list_view,null);

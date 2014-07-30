@@ -16,6 +16,11 @@ package com.bonet.views;
 
 
 
+import com.bonet.views.Provider.BtMonthViewProvider;
+import com.bonet.views.Provider.BtYearViewProvider;
+import com.bonet.views.Provider.GridBtMonthViewProvider;
+import com.bonet.views.Provider.ListBtMonthViewProvider;
+import com.bonet.views.Provider.ListBtYearViewProvider;
 import com.bonet.views.bonetcalendarview.R;
 
 import android.content.Context;
