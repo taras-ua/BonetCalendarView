@@ -10,14 +10,14 @@
 
         <Button
             android:id="@+id/calendar_button_prev"
-            style="@style/BonetCalendarTheme.Buttons.Prev"
+            style="@style/BonetCalendar.Buttons.Prev"
             android:layout_width="@dimen/bt_button_prev_width"
             android:layout_height="@dimen/bt_button_prev_height"
             android:layout_alignParentLeft="true" />
 
         <Button
             android:id="@+id/calendar_button_next"
-            style="@style/BonetCalendarTheme.Buttons.Next"
+            style="@style/BonetCalendar.Buttons.Next"
             android:layout_width="@dimen/bt_button_next_width"
             android:layout_height="@dimen/bt_button_next_height"
             android:layout_alignParentRight="true" />
@@ -31,7 +31,7 @@
             android:layout_toRightOf="@id/calendar_button_prev"
             android:clickable="true"
             android:gravity="center_vertical|center_horizontal"
-            style="@style/BonetCalendarTheme.Text.Headline" />
+            style="@style/BonetCalendar.Text.Headline" />
 
     </RelativeLayout>
 

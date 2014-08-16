@@ -12,78 +12,82 @@
         -->
     </style>
 
+    <style name="BonetCalendar" />
+
     <!-- Application theme. -->
-    <style name="BonetCalendarTheme" parent="AppBaseTheme">
+    <style name="BonetCalendar.Theme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="BonetCalendarTheme.Buttons" />
+    <style name="BonetCalendar.Buttons" />
 
-    <style name="BonetCalendarTheme.Buttons.Prev" parent="@android:style/Widget.Button">
+    <style name="BonetCalendar.Buttons.Prev" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/button_previous_background</item>
         <item name="android:height">@dimen/bt_button_prev_height</item>
         <item name="android:width">@dimen/bt_button_prev_width</item>
         <item name="android:layout_marginBottom">@dimen/bt_button_prev_margin_bottom</item>
     </style>
     
-    <style name="BonetCalendarTheme.Buttons.Next" parent="@android:style/Widget.Button">
+    <style name="BonetCalendar.Buttons.Next" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/button_next_background</item>
         <item name="android:height">@dimen/bt_button_next_height</item>
         <item name="android:width">@dimen/bt_button_next_width</item>
         <item name="android:layout_marginBottom">@dimen/bt_button_next_margin_bottom</item>
     </style>
 
-    <style name="BonetCalendarTheme.Text" parent="@android:style/TextAppearance" />
+    <style name="BonetCalendar.Text" parent="@android:style/TextAppearance" />
 
-    <style name="BonetCalendarTheme.Text.Headline" parent="@style/BonetCalendarTheme.Text">
+    <style name="BonetCalendar.Text.Headline" parent="@style/BonetCalendar.Text">
         <item name="android:textSize">@dimen/bt_headline_textsize</item>
     </style>
 
-    <style name="BonetCalendarTheme.Text.DateActive" parent="@style/BonetCalendarTheme.Text">
+    <style name="BonetCalendar.Text.DateActive" parent="@style/BonetCalendar.Text">
         <item name="android:textColor">@color/bonet_calendar_date_active</item>
     </style>
 
-    <style name="BonetCalendarTheme.Text.DateInactive" parent="@style/BonetCalendarTheme.Text">
+    <style name="BonetCalendar.Text.DateInactive" parent="@style/BonetCalendar.Text">
         <item name="android:textColor">@color/bonet_calendar_date_inactive</item>
     </style>
 
-    <style name="BonetCalendarTheme.Text.Today" parent="@style/BonetCalendarTheme.Text.DateActive" />
+    <style name="BonetCalendar.Text.Today" parent="@style/BonetCalendar.Text.DateActive" />
 
-    <style name="BonetCalendarTheme.Grid" />
+    <style name="BonetCalendar.Grid" />
 
-    <style name="BonetCalendarTheme.Grid.Day">
+    <style name="BonetCalendar.Grid.Day" />
+
+    <style name="BonetCalendar.Grid.Day.Wrapper">
         <item name="android:layout_height">@dimen/bt_grid_cell_height</item>
         <item name="android:minHeight">@dimen/bt_grid_cell_height</item>
         <item name="android:padding">@dimen/bt_grid_cell_padding</item>
     </style>
 
-    <style name="BonetCalendarTheme.Grid.Day.Text" parent="BonetCalendarTheme.Text">
+    <style name="BonetCalendar.Grid.Day.Text" parent="BonetCalendar.Text">
         <item name="android:textSize">@dimen/bt_grid_cell_text_textsize</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="BonetCalendarTheme.Grid.Month">
+    <style name="BonetCalendar.Grid.Month">
         <item name="android:background">@android:color/white</item>
     </style>
 
-    <style name="BonetCalendarTheme.Grid.Month.WeekDaysContainer">
+    <style name="BonetCalendar.Grid.Month.WeekDaysContainer">
         <item name="android:listSelector">@color/bonet_calendar_grid_weekdays_container_listseperator</item>
     </style>
 
-    <style name="BonetCalendarTheme.Grid.Month.DaysContainer">
+    <style name="BonetCalendar.Grid.Month.DaysContainer">
         <item name="android:layout_marginTop">@dimen/bt_grid_month_daycontainer_margintop</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="BonetCalendarTheme.Grid.Weekname">
+    <style name="BonetCalendar.Grid.Weekname">
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:textSize">@dimen/bt_grid_weekname_textsize</item>
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="BonetCalendarTheme.GeneralSeparator">
+    <style name="BonetCalendar.GeneralSeparator">
         <item name="android:background">@color/bonet_calendar_light_green</item>
         <item name="android:layout_height">@dimen/bt_generalseparator_height</item>
     </style>

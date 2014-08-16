@@ -116,11 +116,11 @@ public class DayGridAdapter extends BaseAdapter {
 
         BtDate btDate = new BtDate(mMonth.getYear(), mMonth.getMonth(), day);
         if(isValid && btDate.equals(BtDate.today())) {
-            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_Today);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendar_Text_Today);
         } else if (isValid) {
-            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendar_Text_DateActive);
         } else {
-            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendar_Text_DateInactive);
         }
 		
 		return view;

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    style="@style/BonetCalendarTheme.Grid.Month">
+    style="@style/BonetCalendar.Grid.Month">
 
 
     <GridView
@@ -13,7 +13,7 @@
         android:clickable="false"
         android:focusable="false"
         android:numColumns="7"
-        style="@style/BonetCalendarTheme.Grid.Month.WeekDaysContainer" />
+        style="@style/BonetCalendar.Grid.Month.WeekDaysContainer" />
 
     <include layout="@layout/general_separator" />
 
@@ -22,6 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numColumns="7"
-        style="@style/BonetCalendarTheme.Grid.Month.DaysContainer" />
+        style="@style/BonetCalendar.Grid.Month.DaysContainer" />
 
 </LinearLayout>

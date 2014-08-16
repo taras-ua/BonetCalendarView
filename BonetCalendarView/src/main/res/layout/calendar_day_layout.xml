@@ -3,12 +3,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bt_grid_cell"
     android:layout_width="match_parent"
-    style="@style/BonetCalendarTheme.Grid.Day">
+    style="@style/BonetCalendar.Grid.Day">
 
 	<TextView
         android:id="@+id/bt_grid_cell_text"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        style="@style/BonetCalendarTheme.Grid.Day.Text" />
+        style="@style/BonetCalendar.Grid.Day.Text" />
 
 </LinearLayout>

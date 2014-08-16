@@ -102,9 +102,9 @@ public class DayListAdapter extends BaseAdapter{
         viewHolder.textView.setText( (new SimpleDateFormat(Constants.DAY_LIST_DATEFORMATE, Locale.getDefault())).format(mCalendar.getTime()));
 
 		if(!mMonth.getDate(position + 1).isWithinBounds(mMinDay, mMaxDay)) {
-            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateInactive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendar_Text_DateInactive);
         } else {
-            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendarTheme_Text_DateActive);
+            viewHolder.textView.setTextAppearance(mContext, R.style.BonetCalendar_Text_DateActive);
         }
 
 		return view;
