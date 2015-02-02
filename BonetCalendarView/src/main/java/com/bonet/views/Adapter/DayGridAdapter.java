@@ -27,12 +27,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 
 /**
  * A adapter that displays the month days as a grid. Heavily depends on
  * the MonthDisplayHelper class
  * 
  * @author Eduardo
+ * @author Taras Rogov (contributor)
  */
 
 public class DayGridAdapter extends BaseAdapter {
@@ -135,8 +139,10 @@ public class DayGridAdapter extends BaseAdapter {
 		Log.d("", month + "");
 		mMonth = month;
 		
-		// Starts at Sunday
-		mMonthDisplay = new MonthDisplayHelper(mMonth.getYear(), mMonth.getMonth());
+		// Starts at Locale defined day of week.
+        Locale locale = mContext.getResources().getConfiguration().locale;
+		mMonthDisplay = new MonthDisplayHelper(mMonth.getYear(), mMonth.getMonth(),
+                Calendar.getInstance(locale).getFirstDayOfWeek());
 		
 		// number of cells is 7 times the row of the last day plus 1.
 		mNumCells = (mMonthDisplay.getRowOf(mMonthDisplay.getNumberOfDaysInMonth()) + 1) * 7;

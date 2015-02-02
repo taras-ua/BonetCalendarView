@@ -28,11 +28,15 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 /**
  * A implementation of the BtMonthViewProvider that will display days in a grid fashion,
  * just like a regular calendar
  * 
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  *
  */
 public class GridBtMonthViewProvider extends BtMonthViewProvider {
@@ -60,7 +64,10 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 		Log.d("", "Criando DayGridAdapter");
 		mAdapter = new DayGridAdapter(context, month, getMinDate(), getMaxDate());
 
-		mMonthDisplay = new MonthDisplayHelper(month.getYear(), month.getMonth());
+        // Starts at Locale defined day of week.
+        Locale locale = mContext.getResources().getConfiguration().locale;
+		mMonthDisplay = new MonthDisplayHelper(month.getYear(), month.getMonth(),
+                Calendar.getInstance(locale).getFirstDayOfWeek());
 	
 		mGridItemClickedListener = new OnItemClickListener() {
 			
@@ -88,7 +95,10 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 	
 	@Override
 	public void setMonth(BtMonth month) {
-		mMonthDisplay = new MonthDisplayHelper(month.getYear(), month.getMonth());
+        // Starts at Locale defined day of week.
+        Locale locale = mContext.getResources().getConfiguration().locale;
+		mMonthDisplay = new MonthDisplayHelper(month.getYear(), month.getMonth(),
+                Calendar.getInstance(locale).getFirstDayOfWeek());
 		
 		mAdapter.setMonth(month);
 		
