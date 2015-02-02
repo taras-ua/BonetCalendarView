@@ -25,6 +25,7 @@ import com.bonet.views.bonetcalendarview.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,7 @@ import android.widget.ViewSwitcher;
  * For all features and instructions on how to use/ how to extend check this {@link https://github.com/ebonet/BonetCalendarView page}.
  * 
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  */
 public class BtCalendarView extends LinearLayout implements OnDateSelectedListener{
 
@@ -162,32 +164,46 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 * @param yearProvider
 	 */
 	public void initialize(BtMonthViewProvider monthProvider, BtYearViewProvider yearProvider) {
-		setMonthProvider(monthProvider);
-		setYearProvider(yearProvider);
-		
-		mContainer.addView(mMonthProvider.getView());
-		mContainer.addView(mYearProvider.getView());
+        if(mContainer.getChildCount() == 0) {
+            setMonthProvider(monthProvider);
+            setYearProvider(yearProvider);
+
+            mContainer.addView(mMonthProvider.getView());
+            mContainer.addView(mYearProvider.getView());
+        } else {
+            Log.w(this.getClass().getSimpleName(),
+                    "This instance has already been initialized: " + this.toString());
+        }
 	}
 	
 	/**
 	 * Initializes a simple list calendar using lists
 	 */
 	public void initializeAsList() {
-		mContainer.addView(mMonthProvider.getView());
-		mContainer.addView(mYearProvider.getView());
+        if(mContainer.getChildCount() == 0) {
+            mContainer.addView(mMonthProvider.getView());
+            mContainer.addView(mYearProvider.getView());
+        } else {
+            Log.w(this.getClass().getSimpleName(),
+                    "This instance has already been initialized: " + this.toString());
+        }
 	}
 	
 	/**
 	 * Initializes a simple grid calendar
 	 */
 	public void initializeAsGrid() {
+        if(mContainer.getChildCount() == 0) {
+            setMonthProvider(new GridBtMonthViewProvider(getContext(), BtMonth.fromToday()));
 
-		setMonthProvider(new GridBtMonthViewProvider(getContext(), BtMonth.fromToday()));
-		
-		mContainer.addView(mMonthProvider.getView());
-		mContainer.addView(mYearProvider.getView());
+            mContainer.addView(mMonthProvider.getView());
+            mContainer.addView(mYearProvider.getView());
+        } else {
+            Log.w(this.getClass().getSimpleName(),
+                    "This instance has already been initialized: " + this.toString());
+        }
 	}
-	
+
 	/**
 	 * Sets provider for the month view
 	 * @param provider
