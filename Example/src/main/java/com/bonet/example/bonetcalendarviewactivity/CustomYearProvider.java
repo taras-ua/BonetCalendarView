@@ -44,7 +44,7 @@ public class CustomYearProvider extends BtYearViewProvider {
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
 					if(! (getCalendar() == null)) {
-                        getCalendar().notifyMonthChanged(new BtMonth(getYear(), position));
+                        getCalendar().notifyMonthChanged(new BtMonth(mAdapter.getContext(), getYear(), position));
                     }
 				}
 			});

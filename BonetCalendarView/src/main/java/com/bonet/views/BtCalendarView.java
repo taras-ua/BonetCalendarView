@@ -103,7 +103,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 		mMaxDate = BtDate.MAX_BTDATE;
 		mMinDate = BtDate.MIN_BTDATE;
 
-		BtMonth currentMonth = BtMonth.fromToday();
+		BtMonth currentMonth = BtMonth.fromToday(getContext());
 		
 		// Initializes the calendar
 		mCalendar = new BtCalendar(currentMonth);
@@ -194,7 +194,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 */
 	public void initializeAsGrid() {
         if(mContainer.getChildCount() == 0) {
-            setMonthProvider(new GridBtMonthViewProvider(getContext(), BtMonth.fromToday()));
+            setMonthProvider(new GridBtMonthViewProvider(getContext(), BtMonth.fromToday(getContext())));
 
             mContainer.addView(mMonthProvider.getView());
             mContainer.addView(mYearProvider.getView());
@@ -369,22 +369,22 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 * Displays the next month
 	 */
 	protected void showNextMonth(){
-		setMonth(mCalendar.advanceToNextMonth());
+		setMonth(mCalendar.advanceToNextMonth(getContext()));
 	}
 
 	/**
 	 * Displays the previous month
 	 */
 	protected void showPreviousMonth(){
-		setMonth(mCalendar.regressToPreviousMonth());
+		setMonth(mCalendar.regressToPreviousMonth(getContext()));
 	}
 
 	/**
 	 * Refreshes the month view 
 	 */
 	protected void refreshMonth() {
-		mPrevButton.setEnabled(mCalendar.getMonth().after(BtMonth.fromDay(mMinDate)));
-		mNextButton.setEnabled(mCalendar.getMonth().before(BtMonth.fromDay(mMaxDate)));
+		mPrevButton.setEnabled(mCalendar.getMonth().after(BtMonth.fromDay(getContext(), mMinDate)));
+		mNextButton.setEnabled(mCalendar.getMonth().before(BtMonth.fromDay(getContext(), mMaxDate)));
 
 		setTitle();
 	}
@@ -395,7 +395,7 @@ public class BtCalendarView extends LinearLayout implements OnDateSelectedListen
 	 */
 	protected void setYear(int year) {
 
-		mCalendar.setMonth(year,mCalendar.getMonth().getMonth());
+		mCalendar.setMonth(getContext(),year,mCalendar.getMonth().getMonth());
 
 		mYearProvider.setYear(year);
 		mMonthProvider.setMonth(mCalendar.getMonth());

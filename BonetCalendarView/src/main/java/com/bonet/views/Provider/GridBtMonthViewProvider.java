@@ -61,7 +61,7 @@ public class GridBtMonthViewProvider extends BtMonthViewProvider {
 		
 		mContext = context;
 		
-		Log.d("", "Criando DayGridAdapter");
+//		Log.d("", "Criando DayGridAdapter");
 		mAdapter = new DayGridAdapter(context, month, getMinDate(), getMaxDate());
 
         // Starts at Locale defined day of week.

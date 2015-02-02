@@ -24,9 +24,9 @@ public class CustomGridCalendar extends BtCalendarView{
 		
 		mSelectedDay = BtDate.today();
 		
-		GridBtMonthViewProvider provider = new CustomMonthProvider(context, BtMonth.fromDay(mSelectedDay));
+		GridBtMonthViewProvider provider = new CustomMonthProvider(context, BtMonth.fromDay(getContext(),mSelectedDay));
 		
-		mDayAdapter = new CustomDayGridAdapter(context ,BtMonth.fromDay(mSelectedDay), getMinDate(), getMaxDate(), mSelectedDay);
+		mDayAdapter = new CustomDayGridAdapter(context ,BtMonth.fromDay(getContext(),mSelectedDay), getMinDate(), getMaxDate(), mSelectedDay);
 		
 		provider.setAdapter(mDayAdapter);
 		

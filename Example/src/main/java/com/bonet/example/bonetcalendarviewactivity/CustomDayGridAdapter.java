@@ -22,7 +22,7 @@ public class CustomDayGridAdapter extends DayGridAdapter {
 	
 	public void setSelectedDay(BtDate day){
 		mSelectedDay = day;
-		if(BtMonth.fromDay(mSelectedDay).equals(getMonth())) {
+		if(BtMonth.fromDay(getContext(),mSelectedDay).equals(getMonth())) {
             notifyDataSetChanged();
         }
 	}

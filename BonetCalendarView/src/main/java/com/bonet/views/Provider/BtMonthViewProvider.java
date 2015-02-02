@@ -27,6 +27,7 @@ import com.bonet.views.OnDateSelectedListener;
  * create custom providers.
  * 
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  */
 public abstract class BtMonthViewProvider {
 	
@@ -46,7 +47,7 @@ public abstract class BtMonthViewProvider {
 	 * Creates a provider for current month
 	 */
 	public BtMonthViewProvider(){
-		mMonth = BtMonth.fromToday();
+		mMonth = BtMonth.fromToday(getView().getContext());
 	}
 	
 	/**

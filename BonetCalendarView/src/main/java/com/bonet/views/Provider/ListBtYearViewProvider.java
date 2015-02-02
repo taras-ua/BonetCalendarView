@@ -29,6 +29,7 @@ import android.widget.ListView;
  * are displayed as list. This is the default view.
  *  
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  */
 public class ListBtYearViewProvider extends BtYearViewProvider{
 	
@@ -51,7 +52,7 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
 				if(! (getCalendar() == null)) {
-                    getCalendar().notifyMonthChanged(new BtMonth(getYear(), position));
+                    getCalendar().notifyMonthChanged(new BtMonth(mAdapter.getContext(), getYear(), position));
                 }
 			}
 		
@@ -92,7 +93,7 @@ public class ListBtYearViewProvider extends BtYearViewProvider{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,long arg3) {
 				if(!(getCalendar() == null)) {
-                    getCalendar().notifyMonthChanged(new BtMonth(getYear(), position));
+                    getCalendar().notifyMonthChanged(new BtMonth(mAdapter.getContext(), getYear(), position));
                 }
 			}
 		

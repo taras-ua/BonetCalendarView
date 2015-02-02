@@ -136,7 +136,7 @@ public class DayGridAdapter extends BaseAdapter {
 	 */
 	public void setMonth(BtMonth month) {
 		
-		Log.d("", month + "");
+//		Log.d("", month + "");
 		mMonth = month;
 		
 		// Starts at Locale defined day of week.

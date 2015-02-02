@@ -14,7 +14,12 @@
 
 package com.bonet.views;
 
+import android.content.Context;
+
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
@@ -22,16 +27,19 @@ import java.util.Locale;
  * Represents a month given by year/month index.
  * 
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  */
 public class BtMonth {
 	private int mMonth;
 	private int mYear;
+    private Context mContext;
 	
 	/**
 	 * @param year
 	 * @param month
 	 */
-	public BtMonth(int year, int month){
+	public BtMonth(Context context, int year, int month) {
+        mContext = context;
 		mMonth = month;
 		mYear = year;
 	}
@@ -52,22 +60,25 @@ public class BtMonth {
 	
 	@Override
 	public String toString() {
-		GregorianCalendar calendar = new GregorianCalendar(mYear, mMonth, 1);
-		return (new SimpleDateFormat(Constants.MONTH_DATEFORMATE, Locale.getDefault())).format(calendar.getTime());
+        Locale locale = mContext.getResources().getConfiguration().locale;
+        Calendar calendar = Calendar.getInstance(locale);
+        calendar.set(Calendar.MONTH, mMonth);
+        calendar.set(Calendar.YEAR, mYear);
+		return new SimpleDateFormat("LLLL yyyy").format(calendar.getTime());
 	}
 
 	/**
 	 * @return the month that comes after this one
 	 */
 	public BtMonth next() {
-		return new BtMonth(mYear + mMonth / 11, (mMonth + 1) % 12);
+		return new BtMonth(mContext, mYear + mMonth / 11, (mMonth + 1) % 12);
 	}
 	
 	/**
 	 * @return the month that comes before this one
 	 */
 	public BtMonth previous() {
-		return (mMonth == 0) ? new BtMonth(mYear - 1, 11) : new BtMonth(mYear, mMonth - 1);
+		return (mMonth == 0) ? new BtMonth(mContext, mYear - 1, 11) : new BtMonth(mContext, mYear, mMonth - 1);
 	}
 	
 	/**
@@ -82,11 +93,11 @@ public class BtMonth {
 	/**
 	 * @return the BtMonth with the values of the current date
 	 */
-	public static BtMonth fromToday(){
+	public static BtMonth fromToday(Context context){
 		
 		GregorianCalendar cg = (GregorianCalendar) GregorianCalendar.getInstance();
 		
-		return new BtMonth(cg.get(GregorianCalendar.YEAR), cg.get(GregorianCalendar.MONTH));
+		return new BtMonth(context, cg.get(GregorianCalendar.YEAR), cg.get(GregorianCalendar.MONTH));
 	}
 	
 	/**
@@ -125,7 +136,7 @@ public class BtMonth {
 	 * @param date the date
 	 * @return the month associated with the date
 	 */
-	public static BtMonth fromDay(BtDate date) {
-		return new BtMonth(date.getYear(), date.getMonth());
+	public static BtMonth fromDay(Context context, BtDate date) {
+		return new BtMonth(context, date.getYear(), date.getMonth());
 	}
 }

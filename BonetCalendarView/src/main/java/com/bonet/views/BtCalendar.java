@@ -14,6 +14,8 @@
 
 package com.bonet.views;
 
+import android.content.Context;
+
 /**
  * BtCalendar is the class that handles the calendar itself. I don't
  * use the Gregorian Calendar/ Date because they're too powerful for 
@@ -22,6 +24,7 @@ package com.bonet.views;
  * include support this when implementing the view providers. 
  * 
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  * 
  * 
  */
@@ -34,8 +37,8 @@ public class BtCalendar {
 	 * Creates a BtCalendar that will display today's 
 	 * month
 	 */
-	public BtCalendar(){
-		setMonth(BtMonth.fromToday());
+	public BtCalendar(Context context){
+		setMonth(BtMonth.fromToday(context));
 	}
 	
 	/**
@@ -53,8 +56,8 @@ public class BtCalendar {
 	 * @param year The year of the month
 	 * @param month The index of the month (January as 0)
 	 */
-	public BtCalendar(int year, int month){
-		setMonth(year,month);
+	public BtCalendar(Context context, int year, int month){
+		setMonth(context, year, month);
 	}
 	
 	/**
@@ -81,24 +84,24 @@ public class BtCalendar {
 	 * @param month - the month (January is 0)
 	 * @return the month (allow chain calls)
 	 */
-	public BtMonth setMonth(int year, int month){
-		return setMonth(new BtMonth(year, month));
+	public BtMonth setMonth(Context context, int year, int month){
+		return setMonth(new BtMonth(context, year, month));
 	}
 	
 	/**
 	 * Gets the month that comes after the current one.
 	 * @return The next month
 	 */
-	public BtMonth getNextMonth(){
-		return new BtMonth(mMonth.getYear() + mMonth.getMonth() / 11, (mMonth.getMonth() + 1) % 12);
+	public BtMonth getNextMonth(Context context){
+		return new BtMonth(context, mMonth.getYear() + mMonth.getMonth() / 11, (mMonth.getMonth() + 1) % 12);
 	}
 	
 	/**
 	 * Gets the month that comes before the current one.
 	 * @return The previous month
 	 */
-	public BtMonth getPreviousMonth(){
-		return (mMonth.getMonth() == 0) ? new BtMonth(mMonth.getYear() - 1, 11) : new BtMonth(mMonth.getYear(), mMonth.getMonth() - 1);
+	public BtMonth getPreviousMonth(Context context){
+		return (mMonth.getMonth() == 0) ? new BtMonth(context, mMonth.getYear() - 1, 11) : new BtMonth(context, mMonth.getYear(), mMonth.getMonth() - 1);
 	}
 	
 	
@@ -107,8 +110,8 @@ public class BtCalendar {
 	 * 
 	 * @return The month after advancing
 	 */	
-	public BtMonth advanceToNextMonth(){
-		return setMonth(getNextMonth());
+	public BtMonth advanceToNextMonth(Context context){
+		return setMonth(getNextMonth(context));
 	}
 	
 	/**
@@ -116,8 +119,8 @@ public class BtCalendar {
 	 * 
 	 * @return The month after regressing
 	 */	
-	public BtMonth regressToPreviousMonth(){
-		return setMonth(getPreviousMonth());
+	public BtMonth regressToPreviousMonth(Context context){
+		return setMonth(getPreviousMonth(context));
 	}
 	
 	/**
