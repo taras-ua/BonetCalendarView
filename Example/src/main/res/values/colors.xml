@@ -2,5 +2,6 @@
 <resources>
     <color name="blue">#5097FA</color>
     <color name="lighter_blue">#A5C8FA</color>
+    <color name="material_selected_day_blue">#ff0092f4</color>
     <color name="grey">#808080</color>
 </resources>

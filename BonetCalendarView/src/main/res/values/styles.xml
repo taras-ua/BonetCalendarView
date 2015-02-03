@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -21,14 +21,14 @@
 
     <style name="BonetCalendar.Buttons" />
 
-    <style name="BonetCalendar.Buttons.Prev" parent="@android:style/Widget.Button">
+    <style name="BonetCalendar.Buttons.Prev" parent="@android:style/Widget.Holo.Button">
         <item name="android:background">@drawable/button_previous_background</item>
         <item name="android:height">@dimen/bt_button_prev_height</item>
         <item name="android:width">@dimen/bt_button_prev_width</item>
         <item name="android:layout_marginBottom">@dimen/bt_button_prev_margin_bottom</item>
     </style>
     
-    <style name="BonetCalendar.Buttons.Next" parent="@android:style/Widget.Button">
+    <style name="BonetCalendar.Buttons.Next" parent="@android:style/Widget.Holo.Button">
         <item name="android:background">@drawable/button_next_background</item>
         <item name="android:height">@dimen/bt_button_next_height</item>
         <item name="android:width">@dimen/bt_button_next_width</item>

@@ -1,6 +1,9 @@
 package com.bonet.views.Adapter;
 
 import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import com.bonet.views.BtCalendarView;
 import com.bonet.views.Constants;
@@ -20,9 +23,10 @@ import org.w3c.dom.Text;
  * Adapter that displays month as strings.
  * 
  * @author Eduardo Bonet
+ * @author Taras Rogov (contributor)
  *
  */
-public class MonthListAdapter extends BaseAdapter{
+public class MonthListAdapter extends BaseAdapter {
 	
 	// The year
 	private int mYear;
@@ -98,7 +102,11 @@ public class MonthListAdapter extends BaseAdapter{
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        viewHolder.textView.setText(mYear + Constants.MONTH_LIST_SEPERATOR + DateFormatSymbols.getInstance().getMonths()[position]);
+        Locale locale = getContext().getResources().getConfiguration().locale;
+        Calendar calendar = Calendar.getInstance(locale);
+        calendar.set(Calendar.MONTH, position);
+        calendar.set(Calendar.YEAR, mYear);
+        viewHolder.textView.setText(new SimpleDateFormat("yyyy, LLLL").format(calendar.getTime()));
 		
 		return view;
 	}

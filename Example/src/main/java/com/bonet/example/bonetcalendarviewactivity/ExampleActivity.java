@@ -12,6 +12,8 @@ import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.content.Intent;
 
+import codes.taras.bonetcalendar.material.MaterialGridCalendarActivity;
+
 public class ExampleActivity extends Activity {
 
 	private int mMinDay;
@@ -36,7 +38,14 @@ public class ExampleActivity extends Activity {
 		mMaxDay = 31;
 		mMaxMonth = 11;
 		mMaxYear = 2015;
-		
+
+        findViewById(R.id.example_material).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity(MaterialGridCalendarActivity.class);
+            }
+        });
+
 		findViewById(R.id.example_custom).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {

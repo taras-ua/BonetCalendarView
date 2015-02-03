@@ -29,6 +29,12 @@
         android:text="@string/custom_calendar" />
 
     <Button
+        android:id="@+id/example_material"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/material_calendar" />
+
+    <Button
         android:id="@+id/min_date_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

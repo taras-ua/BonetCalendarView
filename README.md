@@ -1,7 +1,7 @@
 BonetCalendarView
 =================
 
-A customizable Calendar View for Android, supporting API's from 9 and above. Allows user to pick the day from a month as well as wuickly navigate through months.
+A customizable Calendar View for Android, supporting API's from 14 and above. Allows user to pick the day from a month as well as wuickly navigate through months.
 
 Screenshots were taken from a Galaxy Ace Duos running Android 2.3.6 and a Moto G running 4.4.2.
 

@@ -5,6 +5,7 @@
     <string name="calendar_as_list">Calendar as List</string>
     <string name="calendar_as_grid">Calendar as Grid</string>
     <string name="custom_calendar">Custom Calendar</string>
+    <string name="material_calendar">Another Custom Calendar</string>
     <string name="set">Set</string>
     <string name="min_date_">"Min Date: "</string>
     <string name="set_min_date">Set Min Date</string>
